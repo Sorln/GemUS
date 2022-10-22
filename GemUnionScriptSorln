@@ -1,0 +1,31 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Gem Union    (By:Sorln#3037)", "Ocean")
+local Tab = Window:NewTab("Farm")
+local Section = Tab:NewSection("AutoFarm to Kill People")
+local Section = Tab:NewSection("Once turned you on cant turn off")
+local Section = Tab:NewSection("Unless you leave and rejoin")
+Section:NewButton("Gem Union Kill Farm", "ButtonInfo", function()
+    print("Clicked")
+    spawn(function()
+    while wait(0.1) do
+        for i, v in next, game:GetService("Players"):GetChildren() do
+            pcall(function()
+                if v~= game:GetService("Players").LocalPlayer and not v.Character:FindFirstChildOfClass("ForceField") and v.Character.Humanoid.Health > 0 then
+                    while v.Character:WaitForChild("Humanoid").Health > 0 do
+                        wait();
+                        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame;
+                        for x, c in next, game:GetService("Players"):GetChildren() do
+                            if c ~= game:GetService("Players").LocalPlayer then local ohString1 = "right"
+
+game:GetService("ReplicatedStorage").clickcombat.RemoteEvent:FireServer(ohString1) local ohString1 = "left"
+
+game:GetService("ReplicatedStorage").clickcombat.RemoteEvent:FireServer(ohString1) end
+                        end
+                    end
+                end
+            end)
+            wait()
+        end
+   end
+end)
+end)
